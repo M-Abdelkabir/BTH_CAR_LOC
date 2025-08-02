@@ -1,0 +1,342 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    border: none;
+}
+:root{
+    --base : rgb(251, 244, 235);
+    --white : white;
+    --border_raduis: 15px;
+    --theme : rgb(255, 168, 6);
+    --gray : rgb(207, 207, 207);
+    --dark_gray : gray;
+}
+body{
+    padding: 0 2px;
+    background-color: var(--base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: var(--white);
+}
+header{
+    color: var(--white);
+    width: 100%;
+    height: 540px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url(5.webp);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 0 0 var(--border_raduis) var(--border_raduis);
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    font-size: x-large;
+}
+#nav{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+#info{
+    width: 80%;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bolder;
+    gap: 10px;
+}
+.more a{
+    font-size:small ;
+    font-weight:200;
+    display: flex;
+    align-items: center;
+}
+header ul{
+    display: flex;
+    justify-content: flex-start;
+    height: 30px;
+    gap: 10px;
+    width: 80%;
+    padding: 0;
+}
+header ul li{
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    border-radius: 10px;
+    backdrop-filter: blur(1px);
+}
+#search_car {
+    width: 80%;
+    height: 60px;
+    background-color: var(--base);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 2px;
+    z-index: 10;
+        box-shadow: 0px 2px 20px var(--gray);
+}
+#search_car input{
+    width: 40%;
+    height: 30px;
+    border: none;
+    border-bottom: 2px red solid;
+    background-color: transparent;
+    outline: none;
+}
+
+button{
+    height: 30px;
+    width: 100px;
+    background-color: var(--theme);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main{
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-top: -110px;
+    width: calc(100% - 15px);
+    padding: 20px;
+}
+#fleet{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    gap: 30px;
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+.titre,#pagination{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: x-large;
+}
+.right{
+    font-weight: bolder;
+        font-size: x-large;
+}
+#pagination a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--theme);
+    padding: 5px 7px;
+    border-radius: 10px;
+    background-color: var(--white);
+    box-shadow: 0px 0px 5px var(--gray);
+}
+#pagination .active{
+    background-color: var(--theme);
+    color: var(--white);
+}
+.car{
+    width: 30%;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0px 0px 10px var(--gray);
+    overflow: visible;
+}
+.car_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+.car img{
+    max-width: 90%;
+    width: auto;
+    height: 100px;
+    transform: translateY(-40px);
+}
+.model{
+    color: var(--theme);
+}
+.caract{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    width: 90%;
+    padding: 0;
+}
+.caract li{
+    width: 40%;
+    padding: 5px;
+    background-color: var(--gray);
+}
+.important{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+.star{
+    width: 30%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.star li i{
+    font-size: 100%;
+}
+.rent button{
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.rent_page{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+.img_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 90% !important;
+    height: 300px;
+}
+.img_container img{
+    width: 70% !important;
+    max-width: 600px;
+    height: auto;
+}
+.img_container span{
+    font-size: 50px;
+    color: var(--theme);
+    cursor: pointer;
+}
+#rent_form{
+    background-color: var(--theme);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+#rent_form button{
+    display: flex;
+    justify-content: center;
+    background-color: var(--dark_gray);
+    color: var(--theme);
+}
+
+#advantages{
+    width: 100%;
+    background-color: var(--gray);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 30px 0;
+}
+.adv{
+    padding: 40px 0;
+    background-color: var(--white);
+    width: 30%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0px 0px 10px var(--gray);
+}
+.adv:hover, .adv:hover i{
+    background-color: var(--dark_gray);
+    color: var(--white);
+}
+.adv i{
+    font-size: 60px;
+    color: var(--theme);
+}
+.desc{
+    text-align: center;
+}
+footer{
+    width: 100%;
+    height: 150px;
+    padding: 30px 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--theme);
+    color: var(--white);
+    overflow: hidden;
+}
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 30px;
+}
+.social a{
+    color: var(--white);
+    text-decoration: none;
+}
+#logo{
+    font-size: 30px;
+    font-weight: bolder;
+    color: var(--white);
+}
+#logo:hover{
+    color: var(--theme);
+}
+#nav i{
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--white);
+}
+#nav i:hover{
+    color: var(--theme);
+}
+#nav i.active{
+    color: var(--theme);
+}
