@@ -53,6 +53,7 @@ nav{
     display: flex;
     flex-direction: row;
     gap: 10px;
+    z-index: 3;
 }
 #info{
     width: 80%;
@@ -64,6 +65,7 @@ nav{
     font-size: 50px;
     font-weight: bolder;
     gap: 10px;
+    z-index: 3;
 }
 .more a{
     font-size:small ;
@@ -185,6 +187,8 @@ main{
     width: auto;
     height: 100px;
     transform: translateY(-40px);
+    border-radius: var(--border_raduis);
+    box-shadow: 0px 0px 20px var(--gray);
 }
 .model{
     color: var(--theme);
@@ -241,8 +245,10 @@ main{
 }
 .img_container img{
     width: 70% !important;
-    max-width: 600px;
+    max-width: 400px;
     height: auto;
+    border-radius: var(--border_raduis);
+    box-shadow: 0px 0px 20px var(--gray);
 }
 .img_container span{
     font-size: 50px;
@@ -325,9 +331,24 @@ footer{
     font-size: 30px;
     font-weight: bolder;
     color: var(--white);
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
 }
-#logo:hover{
-    color: var(--theme);
+@media screen and (max-width: 800px){
+    #logo{
+        width: 120px;
+        height: 120px;
+        top: -10px;
+        position: relative;
+        transform: translateX(0);
+        left: 5px;
+    }
 }
 #nav i{
     font-size: 30px;

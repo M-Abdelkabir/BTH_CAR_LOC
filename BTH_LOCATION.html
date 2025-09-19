@@ -14,27 +14,44 @@
         <nav>
             <div id="logo"><img src="voiture/2222.png" alt="" width="100%" height="100%"></div>
             <div id="nav">
-                <div><a href="BTH_LOCATION.html"><i class="material-icons" id="home">home</i></a></div>
-                <div><a href="BTH_LOCATION_info.html"><i class="material-icons active">reorder</i></a></div>
+                <div><i class="material-icons" id="search">search</i></div>
+                <div><i class="material-icons active" id="home">home</i></div>
+                <div><a href="BTH_LOCATION_info.html"><i class="material-icons">reorder</i></a></div>
             </div>
         </nav>
         <div id="info">
-            BTH cars is waiting </br>your call
+            BTH CAR awaits </br>your call
             <div class="more"><a href="BTH_LOCATION_info.html">More information  <i class="material-icons flesh">trending_flat</i></a></div>
         </div>
-        <ul>
-            <li>Short-term rental</li>
-            <li>Long-term rental</li>
-            <li>Exclusive transport</li>
-        </ul>
         <form action="" id="search_car">
             <input type="text" id="marque" placeholder="Marque">
             <input type="text" id="model" placeholder="Model">
             <button type="submit">Find a car <i class="material-icons">search</i></button>
         </form>
     </header>
-    <main style="padding-top: 50px;">
-        <div class="titre">About <span class="right">US</span></div>
+    <main>
+        <div id="fleet">
+            <div class="titre">Our <span class="right">Fleet</span></div>
+            <!-- Cars will be dynamically inserted here by JavaScript -->
+        </div>
+        <div id="advantages">
+            <span class="right titre" >Advantages</span>
+            <div class="adv">
+                <i class="material-icons">headset_mic</i>
+                <div class="desc">24/7 Customer Online </br>Support</div>
+                <div class="small">Call us Anywhere Anytime</div>
+            </div>
+            <div class="adv">
+                <i class="material-icons">event_note</i>
+                <div class="desc">Reservation Anytime </br>You Wants</div>
+                <div class="small">24/7 Online reservation</div>
+            </div>
+            <div class="adv">
+                <i class="material-icons">place</i>
+                <div class="desc">Lots of Picking </br>Locations</div>
+                <div class="small">250+ Locations</div>
+            </div>
+        </div>
     </main>
     <footer>
         <!-- This footer is for the social media links -->

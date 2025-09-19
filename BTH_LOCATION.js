@@ -14,7 +14,7 @@ class car {
         }
         getCarInfo() {
             return `<div class="car_info">
-                        <img src="${this.src[0]}" alt="A ${this.marque} ${this.model} car in ${this.color.join(', ')}
+                        <img src="voiture/${this.src[0]}" alt="A ${this.marque} ${this.model} car in ${this.color.join(', ')}
                         <div class="marque">${this.marque}</div>
                         <div class="model">${this.model}</div>
                         <ul class="caract">
@@ -77,11 +77,12 @@ document.addEventListener('DOMContentLoaded',function(){
     const model = document.getElementById('model');
     
     const carListInstance = new carList(3);
-    carListInstance.addCar(new car(carListInstance.getLengthCars()+1,["1.png","2.png","3.png"], "Clio", "X5", ["4x4", "Diesel", "Automatic", "2020"], 5, ['black', 'white'], 60000));
-    carListInstance.addCar(new car(carListInstance.getLengthCars()+1,["2.png"], "Range evoc", "Q7", ["4x4", "Diesel", "Automatic", "2021"], 4, ['black', 'blue'], 70000));
-    carListInstance.addCar(new car(carListInstance.getLengthCars()+1,["3.png"], "Porche macan", "GLC", ["4x4", "Diesel", "Automatic", "2022"], 5, ['black', 'silver'], 80000));
-    carListInstance.addCar(new car(carListInstance.getLengthCars()+1,["1.png"], "Teroc golf", "Cayenne", ["4x4", "Petrol", "Automatic", "2023"], 5, ['black', 'red'], 90000));
-    carListInstance.addCar(new car(carListInstance.getLengthCars()+1,["2.png"], "Golf 8", "X6", ["4x4", "Diesel", "Automatic", "2020"], 5, ['black', 'green'], 100000));
+    // Add cars to the carListInstance
+    carListInstance.addCar(new car(carListInstance.getLengthCars()+1,["1CLIO.jpg","2clio.jpg","3clio.jpeg","4clio.jpeg","5clio.jpeg","6clio.jpeg","7clio.jpeg","8clio.jpeg","9clio.jpeg","10clio.jpeg"], "Clio", "X5", ["4x4", "Diesel", "Automatic", "2020"], 5, ['black', 'white'], 60000));
+    carListInstance.addCar(new car(carListInstance.getLengthCars()+1,["2025-Porsche-Macan-4-EV-15.png","2025-Porsche-Macan-4-EV-25.png","2025-Porsche-Macan-4-EV-28.png","2025-Porsche-Macan-Turbo-EV-11.png","2025-Porsche-Macan-Turbo-EV-12.png","2025-Porsche-Macan-Turbo-EV-14.png","2025-Porsche-Macan-Turbo-EV-20.png"], "Porche macan", "GLC", ["4x4", "Diesel", "Automatic", "2021"], 4, ['black', 'blue'], 70000));
+    carListInstance.addCar(new car(carListInstance.getLengthCars()+1,["DB2020AU00140large.jpg","DB2020AU00141large.jpg","DB2020AU00143large.jpg","DB2020AU00137large.jpg","DB2020AU00144large.jpg","DB2020AU00147large.jpg","DB2020AU00148large.jpg","DB2020AU00136large.jpg"], "Golf", "X6", ["4x4", "Diesel", "Automatic", "2022"], 5, ['black', 'silver'], 80000));
+    carListInstance.addCar(new car(carListInstance.getLengthCars()+1,["Range-Rover-Sport-8-631x420.jpg","Range-Rover-Sport-7-597x420.jpg","Range-Rover-Sport-13-631x420.jpg","Range-Rover-Sport-4-631x420.jpg","DB2020AU00151large.jpg","Range-Rover-Sport-2-881x420.jpg"], "Range Rover Sport", "Cayenne", ["4x4", "Petrol", "Automatic", "2023"], 5, ['black', 'red'], 90000));
+    carListInstance.addCar(new car(carListInstance.getLengthCars()+1,["volkswagen-t-roc-2022-maroc-autonews-face-300x300.jpg","volkswagen-t-roc-autonews-1-300x200.jpg","volkswagen-t-roc-autonews-2-300x200.jpg","volkswagen-t-roc-autonews-3-300x200.jpg","volkswagen-t-roc-autonews-4.jpg","volkswagen-t-roc-autonews-8.jpg","volkswagen-t-roc-autonews-9.jpg"], "Golf", "Large", ["4x4", "Diesel", "Automatic", "2020"], 5, ['black', 'green'], 100000));
     updateCarDisplay();
 
     const searchForm = document.getElementById('search_car');
@@ -126,7 +127,7 @@ document.addEventListener('DOMContentLoaded',function(){
             main.innerHTML = `<div class="rent_page">
                 <div class="titre">Rent a <span class="right">${car.marque} ${car.model}</span></div>
                 <div class="car_info">
-                    <div class="img_container"><span id="left"><i class="material-icons">skip_previous</i></span><img src="${car.src[0]}" alt=""><span id="right"><i class="material-icons">skip_next</i></span></div>
+                    <div class="img_container"><span id="left"><i class="material-icons">skip_previous</i></span><img src="voiture/${car.src[0]}" alt=""><span id="right"><i class="material-icons">skip_next</i></span></div>
                     <div class="marque">${car.marque}</div>
                     <div class="model">${car.model}</div>
                     <ul class="caract">
@@ -162,20 +163,24 @@ document.addEventListener('DOMContentLoaded',function(){
             const right = document.getElementById('right');
             left.addEventListener('click', function() {
                 const img = document.querySelector('.img_container img');
-                // Ensure the image source take just the img src and not the full path
+                // Ensure the image source take just the img src and not the full path and add voiture/
                 const currentSrc = img.src.split('/').pop();
-                img.src = car.src[(car.src.indexOf(currentSrc) - 1 + car.src.length) % car.src.length];
+                img.src = 'voiture/' + car.src[(car.src.indexOf(currentSrc) - 1 + car.src.length) % car.src.length];
                 img.onload = function() {
                     img.style.opacity = '1';
                 }
+                console.log('Left arrow clicked');
+                console.log('Current image source:', img.src);
             });
             right.addEventListener('click', function() {
                 const img = document.querySelector('.img_container img');
                 const currentSrc = img.src.split('/').pop();
-                img.src = car.src[(car.src.indexOf(currentSrc) +1) % car.src.length];
+                img.src = 'voiture/' + car.src[(car.src.indexOf(currentSrc) + 1) % car.src.length];
                 img.onload = function() {
                     img.style.opacity = '1';
                 }
+                console.log('Right arrow clicked');
+                console.log('Current image source:', img.src);
             });
             const rentForm = document.getElementById('rent_form');
             rentForm.addEventListener('submit', function(event) {
