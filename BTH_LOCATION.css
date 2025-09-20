@@ -308,6 +308,7 @@ main{
     width: 100%;
     display: flex;
     flex-wrap : wrap;
+    justify-content: center;
     text-align: center !important;
 }
 footer{
@@ -367,5 +368,6 @@ footer{
 #nav i.active{
     color: var(--theme);
 }
+
 
 
